@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <form (ngSubmit)="onSubmit()">
+        <div class="container-fluid custom-style">
+            <div class="text-left text-warning"><h2>Todo App</h2></div>
+            <div class="input-group mt-5">
+                
+                    <input type="text" [(ngModel)]="todo.todo" placeholder="Enter your Todo" class="text-center p-2 m-3 form-control mt-20" name="todo">
+                    
+                    <button type="submit" class="btn btn-success p-2 m-3">Update Todo</button>
+                    <button type="button" (click)="onBack()" class="btn btn-primary p-2 m-3">Back To List</button>
+              
+            </div>
+        
+        </div>
+    </form>   
+   
+</div>

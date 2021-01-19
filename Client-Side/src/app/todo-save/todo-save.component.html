@@ -1,0 +1,45 @@
+<div class="container-fluid">
+
+
+    
+    <form (ngSubmit)="onSubmit()">
+        <div class="container-fluid custom-style">
+            <div class="text-left text-warning"><h2>Todo App</h2></div>
+            <div class="input-group mt-5">
+                
+                    <input type="text" [(ngModel)]="todoData.todo" placeholder="Enter your Todo" class="text-center p-2 m-3 form-control mt-20" name="todo">
+                    
+                    <button type="submit" class="btn btn-success p-2 m-3">Add Todo</button>
+                    <button type="button" (click)="removeAll()" class="btn btn-danger p-2 m-3">Remove All</button>
+              
+            </div>
+        
+        </div>
+    </form>   
+   
+
+
+    <div class="custom-table">
+                  
+                <div *ngFor="let td of todoList">
+                        <div class="row mt-1">
+                            
+                            <div class="col-8">
+                                <input type="text" #ref  value="{{td.todo}}" readonly style="width: 100%;outline: none;border: none;display: block; color: black; text-align: left;" class="text-success">
+                            </div>
+                            <div class="col col-sm" style="text-align: right;">
+                                <button type="button" (click)="onDone(ref)" class="btn btn-danger">Done</button>
+                            </div>
+                            <div class="col col-sm"  style="text-align: left;">
+                                <button (click)="onUpdate(td.id)" type="button" class="btn btn-warning">Edit</button>
+                            </div>
+
+                        </div>
+
+                        
+                </div>
+                
+    </div>
+
+
+</div>
